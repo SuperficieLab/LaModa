@@ -8,8 +8,6 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +17,101 @@
   }
 }
 
+@font-face {
+    font-family: "vag-rounded";
+    src: url("assets/fonts/VAG Rounded Bold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@theme {
+  --color-pastel-pink: #F4AFCF;
+  --color-light-pink: #EF7DB0;
+  --color-pink: #E94190;
+  --color-dark-pink: #9C2C60;
+  --color-wine-pink: #7A224B;
+  --color-pastel-blue: #D9EDFC;
+  --color-light-blue: #7AC8F0;
+  --color-blue: #21B5EA;
+  --color-dark-blue: #167A9E;
+  --color-deep-blue: #11607C;
+  --color-pastel-yellow: #FFEFAF;
+  --color-yellow: #FDD066;
+  --color-dark-yellow: #DA985B;
+  --color-brown: #AD7946;
+  --color-green: #7CC037;
+  --color-dark-green: #399270;
+  --font-vag-rounded: vag-rounded, sans-serif;
+  --shadow-3xl: 0 6px 6px rgba(0, 0, 0, 0.25); 
+}
+
+.swiper-slide-next div {
+  background-color: #C8C8C8;
+}
+
+.swiper-slide-prev div {
+  background-color: #C8C8C8;
+}
+
+.swiper-slide-prev .wallpaper {
+  opacity: 0.4;
+}
+.swiper-slide-next .wallpaper {
+  opacity: 0.4;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+@media (max-height: 720px) and (min-width: 639px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 639px) {
+  .phone-frame {
+    position: static !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    max-height: none !important;
+    aspect-ratio: unset !important;
+    
+    background: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+  
+.phone-content {
+  border-radius: 0;
+}
+}
+
+
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+img, .no-select img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+img, .no-drag img {
+  -webkit-user-drag: none;
+  user-drag: none;
+  -webkit-touch-callout: none;
 }
