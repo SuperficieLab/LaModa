@@ -88,15 +88,15 @@ function Prize(){
     const handlePrize = () => {
         if (!openResult) {
                 const r = Math.random();
-                if (r < 0.05) {
+                if (r < 0.5) {
                     wheel.current.classList.add('rotate-1440');
                     setOpenResult(true);
                     setIndex(0);
-                } else if (r < 0.15){
+                } else if (r < 1){
                     wheel.current.classList.add('rotate-1710');
                     setOpenResult(true);
                     setIndex(1);
-                } else if (r < 0.2){
+                } else if (r < 1.5){
                     wheel.current.classList.add('rotate-1620');
                     setOpenResult(true);
                     setIndex(0);
@@ -181,13 +181,13 @@ function Prize(){
                     <span className="font-vag-rounded text-white text-[8vw] md:text-2xl">VOCÊ GANHOU</span>
                     <img src="/images/icons/heart.svg" className="h-1/2"></img>
                 </div>
-                <div className="text-[4.5vw] font-vag-rounded text-white leading-5 md:text-lg md:leading-5.5 md:pb-6 pb-1 px-10 text-center">Tire uma captura da tela e <br></br>guarde seu cupom!</div>
+                <div className="text-[4.5vw] font-vag-rounded text-white leading-5 md:text-xl md:leading-5.5 md:pb-6 pb-1 px-10 text-center">Tire uma captura da tela e <br></br>guarde seu cupom!</div>
             </div>
             <div className="row-start-3 row-end-6 h-full w-full relative">
                 <img src="/images/icons/coupon.svg" className="h-full w-full row-span-3"></img>
                 <div className="font-vag-rounded text-white absolute z-20 row-start-1 row-end-2 top-0 left-0 w-full h-full grid grid-rows-3 gap-0">
                     <div className="row-start-1 row-end-2 justify-center items-end flex flex-row">
-                        <div className="bg-wine-pink py-1.5 tracking-wider text-2xl mb-[2.5vh] md:mb-[1vh] rounded-full px-4 flex flex-row justify-center items-center gap-2">
+                        <div className="bg-wine-pink py-1.5 tracking-wider text-2xl mb-[2.5vh] md:mb-[2.5vh] rounded-full px-4 flex flex-row justify-center items-center gap-2">
                             {prize[index].code}
                             <button onClick={handleCopy} className="cursor-pointer rounded-full h-9 w-fit flex flex-row justify-center items-center">
                                 <img src="/images/icons/copy-icon 1.svg" className="h-3/5"></img>
@@ -198,9 +198,6 @@ function Prize(){
                 </div>
             </div>
             <div className="row-start-6 row-end-7 w-full flex flex-row gap-x-4 gap-y-0 items-center justify-center">
-                <Link href={`/end?id=${encodeURIComponent(id)}`} className="py-4 h-fit col-start-2 col-end-4 rounded-xl w-1/2 max-w-72 text-[6vw] md:text-2xl text-center text-white bg-blue border-2 shadow-3xl border-deep-blue font-vag-rounded active:bg-dark-blue">
-                    Eu quero!
-                </Link>
             </div>
         </div>
         <div ref={noPrize} className="absolute top-0 left-0 z-10 bg-blue h-full w-full hidden grid-rows-7 grid-cols-1">
@@ -210,9 +207,6 @@ function Prize(){
             <div className="row-start-3 row-end-6 flex flex-col gap-3 w-full">
             </div>
             <div className="row-start-6 row-end-7 w-full flex flex-row gap-4 items-center justify-center px-5">
-                <a href={`/images/wallpapers/original/${wallpapers[currentSlide]}`} download onClick={handleDownload} className="py-4 h-fit col-start-2 col-end-4 rounded-xl w-1/2 max-w-72 text-[6vw] md:text-2xl text-center text-white bg-pink border-2 shadow-3xl border-wine-pink font-vag-rounded active:bg-dark-pink">
-                    Eu quero!
-                </a>
             </div>
         </div>
         </div>
